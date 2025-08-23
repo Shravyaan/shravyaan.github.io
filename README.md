@@ -13,4 +13,4 @@ Stay tuned for new posts!
 ---
 ### My Blog Posts
 
-* [Day 3: I Learned How to Create My First Blog!](/2024/03/09/learning-to-create-my-blog.html)
+* [Day 3: I Learned How to Create My First Blog!] https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-08-20-learning-to-create-my-blog.md
