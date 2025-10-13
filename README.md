@@ -12,6 +12,8 @@ Stay tuned for new posts!
 
 ---
 ### My Blog Posts 
+* [September in Review: Polishing the Toolkit and the Portfolio](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-09-28-september-monthly-review.md)
+* [Week 4 Review: From Data Structures to Data Visualization](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-09-21-week-four-review.md)
 * [Week 3 Review: Connecting Theory to Practice](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-09-14-week-three-review.md)
 * [Week 2 Review: Catching Up and Pushing Forward](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-09-07-week-two-review.md)
 * [My Upskilling Journey: Setting Up for Success]( https://github.com/Shravyaan/shravyaan.github.io/commit/5fb89da20edd82e98f43a0ba32784fc5c3edece3)
