@@ -9,7 +9,7 @@ They solve the same problem, but as I learned in my "Python for Everybody" cours
 
 ---
 
-## Method 1: Web Scraping (The Py4e Chapter 12 way)
+## Method 1: Web Scraping 
 
 **The Idea:** Web scraping is for reading a website that was built for **humans**. Your script downloads the raw HTML and "scrapes" it to find the data you want.
 
@@ -69,7 +69,7 @@ They solve the same problem, but as I learned in my "Python for Everybody" cours
 
 ---
 
-## Method 1: Web Scraping (The Py4e Chapter 12 way)
+## Method 1: Web Scraping 
 
 **The Idea:** Web scraping is for reading a website that was built for **humans**. Your script downloads the raw HTML and "scrapes" it to find the data you want.
 
