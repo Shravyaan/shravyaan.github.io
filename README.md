@@ -12,6 +12,7 @@ Stay tuned for new posts!
 
 ---
 ### My Blog Posts 
+* [How to Get Data from the Web with Python (Scraping vs. APIs)](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-10-27-how-to-get-data-from-the-web-with-python.md)
 * [September in Review: Polishing the Toolkit and the Portfolio](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-09-28-september-monthly-review.md)
 * [Week 4 Review: From Data Structures to Data Visualization](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-09-21-week-four-review.md)
 * [Week 3 Review: Connecting Theory to Practice](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-09-14-week-three-review.md)
