@@ -1,38 +1,16 @@
+---
 layout: default
-title: 'Mastering the Data: Why Database Normalization Matters'
+title: 'Why Database Normalization Matters'
+---
 
-Mastering the Data: Why Database Normalization Matters
+## Building a Solid Foundation for Data
+Today marks a significant shift in my upskilling journey as I moved from general cloud concepts to the specific architecture of data. My main goal was to understand **Database Normalization**, a critical process for designing databases that are efficient, organized, and scalable. I applied these concepts to design a database for an aviation system, which helped me see exactly why "clean data" is so important.
 
-This week, I moved beyond just building databases to understanding the "science" behind them. While working on my Aviation project, I realized that how we structure data is the difference between a system that scales and a system that suffers from data corruption.
+### What I learned 
 
-The Problem: Data Messiness
+* **First Normal Form (1NF): ** The journey began with the concept of "Atomicity." I learned that for a table to be in 1NF, every single cell must contain only one value—no lists or comma-separated items are allowed. It forces you to break data down into its smallest parts, ensuring that you don't have repeating groups of data that make searching and sorting impossible.
+* **Second Normal Form (2NF): ** This step introduced me to the complexity of "Primary Keys." I learned that to reach 2NF, the table must already be in 1NF and must not have any "partial dependencies." This means that if you have a composite key (two columns that uniquely identify a row), every other column must rely on *both* parts of that key. If a column only relates to one half, it belongs in a different table entirely.
+* **Third Normal Form (3NF): ** This was the most rigorous step, focused on removing "transitive dependencies." I learned that a column should not depend on another non-key column. For example, in my airline database, the `City` of an airport depends on the `AirportID`, not directly on the `FlightID`. The rule I’ll always remember is: data must depend on the key, the whole key, and nothing but the key.
+* **Applying the Theory: ** I didn't just read about these rules; I put them into practice using a tool called `dbdiagram.io`. I designed a complete schema with three distinct tables—`Aircrafts`, `Airports`, and `Flights`—linking them with foreign keys. This visual exercise showed me how normalization actually reduces redundancy and prevents data anomalies.
 
-I started with a simple "Flight Log" table. It had everything: flight IDs, pilot names, airport cities, and aircraft models all in one place. It worked fine for five rows, but I quickly encountered Anomalies. If a pilot changed their license, I had to update it in fifty different rows. If I deleted a flight, I accidentally deleted the pilot’s entire profile. This is why we normalize.
-
-Breaking Down the Stages (1NF, 2NF, 3NF)
-
-To fix my flight database, I applied the three "Golden Rules" of normalization. Here is how I broke it down:
-
-1NF (First Normal Form) - Atomic Values:
-In my initial design, I had a column for "Pilots" that listed two people in one cell. This made it impossible to run a query to find a specific pilot. 1NF taught me that every cell must be indivisible. I moved to a structure where every assignment is its own unique record.
-
-2NF (Second Normal Form) - The Whole Key:
-This was my first "aha!" moment. I was using a composite key (Flight ID + Pilot ID). I had a column for "Pilot License Type" in that same table. But a pilot's license doesn't depend on the flight they are flying; it only depends on the Pilot ID. 2NF taught me to move that data to a separate Pilots table so it only exists in one place.
-
-3NF (Third Normal Form) - Nothing But the Key:
-This is the final polish. In my Flights table, I had Airport_Code and Airport_City. But the city depends on the airport, not the flight. This is a "transitive dependency." I moved all airport details into an Airports table, ensuring that the Flights table only cares about the flight itself.
-
-The "Codd" Mnemonic
-
-The best way to remember this is a quote I found: "The data depends on the key (1NF), the whole key (2NF), and nothing but the key (3NF), so help me Codd." (Named after E.F. Codd, the father of relational databases).
-
-Why It Matters for DevOps and SDE
-
-As I prepare for SDE and DevOps roles, I'm learning that normalization isn't just about "neatness." It’s about Infrastructure Efficiency. Normalized databases are faster to index, require less storage, and—most importantly—prevent the logic errors that cause systems to crash during high-traffic events.
-
-What's Next?
-
-With a clean database structure now in place, I’m moving back into the cloud. My next goal is to explore how these relational structures interact with AWS DynamoDB (NoSQL) to see how scaling changes when we move away from traditional SQL.
-
-You can see my updated database schema and normalization README here:
-https://github.com/shravyaan
+So this was my experience with database normalization, and it was fascinating to see how a few strict rules can transform a messy dataset into a robust, professional database structure!
