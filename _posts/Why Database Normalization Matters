@@ -1,0 +1,94 @@
+Why Database Normalization Matters: A Guide for Backend Engineers
+
+In the world of backend engineering, data is king. But raw data is often messy, redundant, and prone to errors. This is where Database Normalization comes in.
+
+Recently, while building a Flight Tracking system, I realized that how you structure your tables determines whether your application scales smoothly or crashes under the weight of data anomalies. Here is a breakdown of why normalization matters and how to achieve it using 1NF, 2NF, and 3NF.
+
+What is Normalization?
+
+Normalization is the process of organizing a relational database to reduce data redundancy and improve data integrity. It ensures that every piece of data is stored in exactly one place.
+
+Without normalization, you face Anomalies:
+
+Update Anomaly: You change a value in one place but forget the other five copies.
+
+Delete Anomaly: You delete a record and accidentally lose unrelated information.
+
+Insert Anomaly: You can’t add new data because you’re missing a piece of a required composite key.
+
+The Example: An Unnormalized Flight Log
+
+Imagine a table tracking flight assignments:
+
+Flight_ID
+
+Pilots (Name, ID)
+
+Aircraft_Model
+
+Departure_Airport
+
+Airport_City
+
+AI-101
+
+Shravya (P1), John (P2)
+
+A320
+
+BLR
+
+Bengaluru
+
+Step 1: First Normal Form (1NF)
+
+The Rule: Atomic values and no repeating groups.
+
+In the table above, the "Pilots" column has two names in one cell. This makes searching for "Shravya" impossible with standard SQL.
+
+The Fix: Every cell must have exactly one value.
+
+Result: We create separate rows or a mapping table so that each pilot assignment is its own record.
+
+Step 2: Second Normal Form (2NF)
+
+The Rule: Must be in 1NF + No Partial Dependencies.
+
+This applies when you have a Composite Primary Key (a key made of two or more columns).
+
+In a table with a PK of {Flight_ID, Pilot_ID}, if we store Pilot_Name, we have a problem. Pilot_Name depends only on the Pilot_ID, not the Flight_ID. This is a partial dependency.
+
+The Fix: Move the pilot details to their own table.
+
+Table 1: Pilots (Pilot_ID [PK], Pilot_Name)
+
+Table 2: Assignments (Flight_ID, Pilot_ID)
+
+Step 3: Third Normal Form (3NF)
+
+The Rule: Must be in 2NF + No Transitive Dependencies.
+
+This is the "Golden Rule." A non-key column should not depend on another non-key column.
+
+In our flights table, Flight_ID determines the Departure_Airport, and Departure_Airport determines the Airport_City.
+Flight_ID -> Airport -> City.
+
+If the city name for "BLR" changes, we would have to update it in every single flight record. That’s a transitive dependency.
+
+The Fix: Remove the city from the Flights table and create an Airports table.
+
+Table 1: Airports (Airport_Code [PK], City)
+
+Table 2: Flights (Flight_ID [PK], Airport_Code [FK])
+
+Conclusion: The "Codd" Oath
+
+To remember these rules, engineers often use this famous mnemonic:
+
+"The data depends on the Key (1NF), the Whole Key (2NF), and Nothing But the Key (3NF), so help me Codd."
+
+By following these steps, you ensure your database is "clean," your queries are faster, and your data remains consistent as your application grows.
+
+What's your favorite database optimization trick? Let me know in the comments!
+
+#Database #SQL #BackendEngineering #AWS #DataScience #CodingLife
