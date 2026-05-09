@@ -12,6 +12,7 @@ Stay tuned for new posts!
 
 ---
 ### My Blog Posts 
+* [Predective Maintainance of Aircraft Engines.](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2026-04-20-Aviation-Predictive-Maintenance-Problem-Statement.md)
 * [Why Database Normalization Matters](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-12-26-DatabaseNormalizatio.md).
 * [October Learnings: From OOP to the Cloud](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-11-02-october-learnings-from-oop-to-the-cloud.md)
 * [How to Get Data from the Web with Python (Scraping vs. APIs)](https://github.com/Shravyaan/shravyaan.github.io/blob/main/_posts/2025-10-27-how-to-get-data-from-the-web-with-python.md)
